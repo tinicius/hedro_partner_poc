@@ -14,6 +14,11 @@ const controller = require('./controller/post.controller')
 const PARTNER_POST_URL = "/partner_post_url"
 
 app.use(express.json())
+
+app.get('*', function routeHandler(req, res) {
+  res.send('ok');
+});
+
 app.post(PARTNER_POST_URL, controller)
 
 const PORT = process.env.PORT || 3000
